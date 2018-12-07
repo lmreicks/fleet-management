@@ -5,15 +5,15 @@
 		</div>
 	</div>
 	<div class="row form-group">
-		<div class="col">
+		<div class="col" *ngIf="vehicles">
 			<fleet-map [vehicles]="vehicles" [(selected)]="SelectedVehicle"></fleet-map>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col">
+		<div class="col" *ngIf="vehicles">
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Selected: {{ SelectedVehicle.id }}
+					Selected: {{ SelectedVehicle?.id }}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<a class="dropdown-item" href="#" *ngFor="let v of vehicles" (click)="SelectedVehicle = v">{{ v.id }}</a>

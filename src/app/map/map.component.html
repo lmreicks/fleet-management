@@ -1,9 +1,9 @@
-<agm-map *ngIf="vehicles && selected" [(latitude)]="selected.lat" [(longitude)]="selected.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true"
+<agm-map *ngIf="vehicles && selected" [(latitude)]="selected.latitude" [(longitude)]="selected.longitude" [(zoom)]="location.zoom" [disableDefaultUI]="true"
  [zoomControl]="true" [(fitBounds)]='location.viewport'>
 	<agm-marker *ngFor="let v of vehicles"
 				(click)="selected = v"
-				[(latitude)]="v.lat"
-				[(longitude)]="v.lng">
+				[(latitude)]="v.latitude"
+				[(longitude)]="v.longitude">
 
 			<agm-info-window class="popover bs-popover-top">
 				<strong>InfoWindow content</strong>
